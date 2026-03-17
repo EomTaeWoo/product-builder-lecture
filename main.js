@@ -1,5 +1,6 @@
 const numbersContainer = document.getElementById('numbers-container');
 const generateButton = document.getElementById('generate-button');
+const themeToggle = document.getElementById('theme-toggle');
 
 generateButton.addEventListener('click', () => {
     numbersContainer.innerHTML = '';
@@ -15,3 +16,10 @@ generateButton.addEventListener('click', () => {
         numbersContainer.appendChild(numberDiv);
     });
 });
+
+themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    const isDarkMode = document.body.classList.contains('dark-mode');
+    themeToggle.textContent = isDarkMode ? 'Light Mode' : 'Dark Mode';
+});
+
