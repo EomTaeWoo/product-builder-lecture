@@ -102,3 +102,11 @@ button {
     width: 100%;
     margin-top: 10px;
 }
+
+#disqus-container {
+    margin-top: 50px;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    border-top: 1px solid #ccc;
+}
