@@ -1,0 +1,104 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --number-bg: #eeeeee;
+    --button-bg: #f0f0f0;
+    --button-text: #000000;
+}
+
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --number-bg: #333333;
+    --button-bg: #444444;
+    --button-text: #ffffff;
+}
+
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#numbers-container {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.number {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--number-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#contact-form-container {
+    margin-top: 50px;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border-top: 1px solid #ccc;
+}
+
+#contact-form-container h2 {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input, .form-group textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: inherit;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+#contact-form-container button {
+    width: 100%;
+    margin-top: 10px;
+}
