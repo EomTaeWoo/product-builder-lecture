@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>인공지능 동물상 테스트 (AI Animal Face Test)</title>
+    <title>인공지능 동물상 테스트 - 나를 닮은 동물 찾기 (AI Animal Face Test)</title>
+    <meta name="description" content="AI가 분석하는 나의 동물상 테스트! 강아지상, 고양이상 중 어떤 동물을 더 닮았는지 확인해보세요. 사진은 저장되지 않으니 안심하고 테스트하세요.">
+    <meta name="keywords" content="동물상 테스트, AI 테스트, 인공지능 동물상, 강아지상 고양이상, 얼굴 분석">
     <link href='/style.css' rel='stylesheet'>
+    
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4505230211997855"
      crossorigin="anonymous"></script>
     <meta name="google-adsense-account" content="ca-pub-4505230211997855">
+
     <!-- TensorFlow.js and Teachable Machine libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
@@ -16,10 +20,18 @@
 <body>
     <button id="theme-toggle">Dark Mode</button>
     
+    <nav class="main-nav">
+        <ul>
+            <li><a href="#upload-section">테스트하기</a></li>
+            <li><a href="#guide-section">동물상 가이드</a></li>
+            <li><a href="#faq-section">자주 묻는 질문</a></li>
+        </ul>
+    </nav>
+
     <main class="container">
         <header>
             <h1>인공지능 동물상 테스트</h1>
-            <p class="subtitle">나는 어떤 동물을 닮았을까? 지금 바로 확인해보세요!</p>
+            <p class="subtitle">나는 어떤 동물을 닮았을까? AI가 분석해주는 나의 얼굴형 테스트</p>
         </header>
 
         <section id="upload-section">
@@ -31,13 +43,14 @@
                         <div id="upload-placeholder">
                             <span class="icon">📸</span>
                             <p>이미지를 클릭하거나 드래그하여 업로드하세요</p>
+                            <p class="upload-hint">* 사진은 어디에도 저장되지 않습니다.</p>
                         </div>
                     </div>
                 </label>
             </div>
             <div id="loading" class="loading" style="display: none;">
                 <div class="spinner"></div>
-                <p>AI가 분석 중입니다...</p>
+                <p>AI가 당신의 얼굴을 정밀하게 분석 중입니다...</p>
             </div>
         </section>
 
@@ -60,39 +73,88 @@
 
             <button id="retry-button">다시 시도하기</button>
         </section>
+
+        <hr class="divider">
+
+        <section id="guide-section" class="content-section">
+            <article>
+                <h2>동물상 특징 가이드</h2>
+                <div class="guide-grid">
+                    <div class="guide-item">
+                        <h3>🐶 강아지상</h3>
+                        <p>강아지상은 전반적으로 둥글고 부드러운 얼굴형이 특징입니다. 선한 눈매와 밝은 미소가 돋보이며, 보는 사람에게 친근함과 다정함을 줍니다. 눈꼬리가 살짝 처지거나 눈동자가 큰 경우가 많아 보호 본능을 일으키기도 합니다.</p>
+                    </div>
+                    <div class="guide-item">
+                        <h3>🐱 고양이상</h3>
+                        <p>고양이상은 날렵하고 세련된 느낌이 강합니다. 눈꼬리가 살짝 올라가 있어 도도하고 신비로운 분위기를 자아내며, 턱선이 갸름한 경우가 많습니다. 카리스마와 우아함이 공존하는 매력적인 얼굴형입니다.</p>
+                    </div>
+                </div>
+                <div class="guide-info">
+                    <h3>어떻게 분석되나요?</h3>
+                    <p>본 테스트는 Google의 인공지능 라이브러리인 <strong>Teachable Machine</strong>을 활용하여 제작되었습니다. 수만 장의 강아지/고양이 이미지 데이터를 학습한 모델이 사용자의 얼굴 특징(눈, 코, 입의 위치와 형태 등)을 분석하여 가장 유사도가 높은 동물을 찾아냅니다.</p>
+                </div>
+            </article>
+        </section>
+
+        <section id="faq-section" class="content-section">
+            <h2>자주 묻는 질문 (FAQ)</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h4>Q. 제 사진이 서버에 저장되나요?</h4>
+                    <p>A. 아니요! 본 서비스는 클라이언트 기반 AI 기술을 사용하여, 사용자의 브라우저 내에서만 분석이 이루어집니다. 업로드한 사진은 어디에도 저장되거나 전송되지 않으니 안심하셔도 됩니다.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Q. 결과가 매번 다를 수 있나요?</h4>
+                    <p>A. 사진의 각도, 조명, 표정에 따라 AI가 인식하는 데이터값이 미세하게 달라질 수 있습니다. 정면을 바라보는 밝은 사진일수록 더 정확한 결과가 나옵니다.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Q. 서비스 이용료는 무료인가요?</h4>
+                    <p>A. 네, 완전 무료입니다. 광고 수익을 통해 서비스가 운영되니 광고를 너그럽게 봐주시면 감사하겠습니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="privacy-section" class="content-section">
+            <h2>개인정보 처리방침</h2>
+            <p>1. 본 서비스는 사용자의 이미지를 수집하거나 저장하지 않습니다.<br>
+               2. Google AdSense를 사용하여 광고를 게재하며, 이를 위해 쿠키를 사용할 수 있습니다.<br>
+               3. 자세한 광고 및 쿠키 관련 정책은 Google의 정책을 따릅니다.</p>
+        </section>
     </main>
 
-    <div id="contact-form-container">
-        <h2>제휴 문의</h2>
-        <form action="https://formspree.io/f/xkoqkzoz" method="POST">
-            <div class="form-group">
-                <label for="name">이름</label>
-                <input type="text" name="name" id="name" required placeholder="성함을 입력해주세요">
-            </div>
-            <div class="form-group">
-                <label for="email">이메일</label>
-                <input type="email" name="_replyto" id="email" required placeholder="email@example.com">
-            </div>
-            <div class="form-group">
-                <label for="message">문의 내용</label>
-                <textarea name="message" id="message" required placeholder="제휴 관련 문의 내용을 입력해주세요"></textarea>
-            </div>
-            <button type="submit">문의하기</button>
-        </form>
-    </div>
+    <footer class="site-footer">
+        <div id="contact-form-container">
+            <h2>제휴 및 문의</h2>
+            <form action="https://formspree.io/f/xkoqkzoz" method="POST">
+                <div class="form-group">
+                    <label for="name">이름</label>
+                    <input type="text" name="name" id="name" required placeholder="성함을 입력해주세요">
+                </div>
+                <div class="form-group">
+                    <label for="email">이메일</label>
+                    <input type="email" name="_replyto" id="email" required placeholder="email@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">문의 내용</label>
+                    <textarea name="message" id="message" required placeholder="문의 내용을 입력해주세요"></textarea>
+                </div>
+                <button type="submit">문의하기</button>
+            </form>
+        </div>
 
-    <div id="disqus-container">
-        <div id="disqus_thread"></div>
-        <script>
-            (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://productbuilder-uvsz0umnze.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
+        <div id="disqus-container">
+            <div id="disqus_thread"></div>
+            <script>
+                (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://productbuilder-uvsz0umnze.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+            </script>
+        </div>
+        <p class="copyright">&copy; 2026 AI 동물상 테스트. All rights reserved.</p>
+    </footer>
 
     <script defer type="text/javascript" src="/main.js"></script>
 </body>
